@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator, createNavigationContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import MainScreen from './Components/MainScreen';
 
 export default class App extends React.Component {
@@ -17,7 +17,7 @@ const AppStackNavigator = createStackNavigator({
   }
 });
 
-const AppNavigationContainer = createNavigationContainer(AppStackNavigator);
+const AppNavigationContainer = createAppContainer(AppStackNavigator);
 
 const styles = StyleSheet.create({
   container: {

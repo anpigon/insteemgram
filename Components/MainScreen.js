@@ -7,7 +7,7 @@ import {
     } from 'react-native';
 
 import { Icon } from 'native-base';
-import { createTabNavigator, createBottomTabNavigator, createNavigationContainer } from 'react-navigation';
+import { createTabNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 // import HomeTab from './AppTabNavigator/HomeTab';
 // import SearchTab from './AppTabNavigator/SearchTab';
@@ -71,7 +71,7 @@ const AppTabNavigator = createBottomTabNavigator({
         showIcon: true,
     }
 });
-const AppTabContainer = createNavigationContainer(AppTabNavigator);
+const AppTabContainer = createAppContainer(AppTabNavigator);
 
 const style = StyleSheet.create({
     container: {
