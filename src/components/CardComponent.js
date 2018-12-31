@@ -12,16 +12,16 @@ import { MaterialIcons, MaterialCommunityIcons, EvilIcons, Ionicons, AntDesign }
 class CardCompnent extends Component{
     render(){
         const images = {
-            '1': require('../assets/react_native.jpg'),
-            '2': require('../assets/python.jpg'),
-            '3': require('../assets/deep_learning.png')
+            '1': require('../../assets/react_native.jpg'),
+            '2': require('../../assets/python.jpg'),
+            '3': require('../../assets/deep_learning.png')
         }
 
         return (
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={require('../assets/1.jpg')} />
+                        <Thumbnail source={require('../../assets/1.jpg')} />
                         <Body>
                             <Text>Beomwoo</Text>
                             <Text note>2018년 5월 22일</Text>

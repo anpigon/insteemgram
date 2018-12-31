@@ -10,16 +10,16 @@ import { Icon, Container, Content, Header, Left, Body, Right, Button } from 'nat
 import CardCompnent from '../CardComponent';
 
 var images=[
-    require('../../assets/1.jpg'),
-    require('../../assets/2.jpg'),
-    require('../../assets/3.jpg'),
-    require('../../assets/4.jpg'),
-    require('../../assets/5.jpg'),
-    require('../../assets/6.jpeg'),
-    require('../../assets/7.jpg'),
-    require('../../assets/1.jpg'),
-    require('../../assets/deep_learning.png'),
-    require('../../assets/python.jpg')
+    require('../../../assets/1.jpg'),
+    require('../../../assets/2.jpg'),
+    require('../../../assets/3.jpg'),
+    require('../../../assets/4.jpg'),
+    require('../../../assets/5.jpg'),
+    require('../../../assets/6.jpeg'),
+    require('../../../assets/7.jpg'),
+    require('../../../assets/1.jpg'),
+    require('../../../assets/deep_learning.png'),
+    require('../../../assets/python.jpg')
 ]
 
 var {width,height} = Dimensions.get('window')
@@ -94,7 +94,7 @@ class ProfileTab extends Component{
                     <View style={{paddingTop:10}}>
                         <View style={{flexDirection:'row'}}>
                             <View style={{flex:1, alignItems:'center'}}>
-                                <Image source={require('../../assets/1.jpg')}
+                                <Image source={require('../../../assets/1.jpg')}
                                 style={{width:75, height:75, borderRadius:37.5}}/>
                             </View>
                             <View style={{flex:3}}>
