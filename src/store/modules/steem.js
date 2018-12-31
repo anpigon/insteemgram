@@ -21,3 +21,5 @@ export default handleActions({
     // });
   },
 }, defaultState);
+
+// 참고: https://github.com/erikras/ducks-modular-redux
