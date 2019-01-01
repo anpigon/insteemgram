@@ -23,7 +23,7 @@ class CardCompnent extends Component{
                     <Left>
                         <Thumbnail source={require('../../assets/1.jpg')} />
                         <Body>
-                            <Text>Beomwoo</Text>
+                            <Text>anpigon</Text>
                             <Text note>2018년 5월 22일</Text>
                         </Body>
                     </Left>
@@ -54,7 +54,7 @@ class CardCompnent extends Component{
                 </CardItem>
                 <CardItem>
                     <Text>
-                        <Text style={{fontWeight:'900'}}>Beomwoo </Text>
+                        <Text style={{fontWeight:'900'}}>anpigon </Text>
                         #인스타그램 #따라하기 #리액트네이티브</Text>
                 </CardItem>
             </Card>

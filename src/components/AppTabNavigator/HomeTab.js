@@ -23,14 +23,14 @@ class HomeTab extends Component{
             <Container style = {style.container}>
                 <Header>
                     <Left>
-                        {/* <Icon name='ios-camera-outline' style={{paddingLeft:10}}/> */}
-                        <Ionicons name='ios-camera' size={30} style={{paddingLeft:10}}/>
+                        <Icon name='ios-camera' style={{paddingLeft:10}}/>
+                        {/* <Ionicons name='ios-camera' size={30} style={{paddingLeft:10}}/> */}
                         {/* <SimpleLineIcons name='camera' size={20} style={{paddingLeft:10}}/> */}
                     </Left>
                     <Body><Text style={{fontWeight:'900'}}>Insteemgram</Text></Body>
                     <Right>
-                        {/* <Icon name='ios-send-outline' style={{paddingRight:10}}/> */}
-                        <Ionicons name='ios-send' size={30} style={{paddingRight:10}}/>
+                        <Icon name='ios-send' style={{paddingRight:10}}/>
+                        {/* <Ionicons name='ios-send' size={30} style={{paddingRight:10}}/> */}
                         {/* <SimpleLineIcons name='paper-plane' size={20} style={{paddingLeft:10}}/> */}
                     </Right>
                 </Header>

@@ -9,6 +9,10 @@ import {
 import { Icon, Container, Content, Header, Left, Body, Right, Button } from 'native-base';
 import CardCompnent from '../CardComponent';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../store/modules/steem';
+
 var images=[
     require('../../../assets/1.jpg'),
     require('../../../assets/2.jpg'),
@@ -26,7 +30,7 @@ var {width,height} = Dimensions.get('window')
 class ProfileTab extends Component{
     static navigationOptions = {
         tabBarIcon: ({ tintColor }) => (
-            < Icon name='person' style={{color:tintColor}} />
+            <Icon name='person' style={{color:tintColor}} />
         )
     }
     constructor(props){
@@ -77,6 +81,10 @@ class ProfileTab extends Component{
     
     
     render(){
+        console.log('ProfileTab', this.props)
+        // const { steem: { account } } = this.props;
+        const account = this.props.steem.account;
+        console.log('account', account, this.props.steem);
         return (
             <Container style={{flex:1, backgroundColor:'white'}}>
                 <Header>
@@ -121,7 +129,7 @@ class ProfileTab extends Component{
                             </View>
                         </View>
                         <View style={{paddingHorizontal:10, paddingVertical:10}}>
-                            <Text style={{fontWeight:'bold'}}>범우[25:?]</Text>
+                            <Text style={{fontWeight:'bold'}}>안피곤[25:?]</Text>
                             <Text> React-Native로</Text>
                             <Text> Instagram UI 따라하기!!!</Text>
                         </View>
@@ -152,7 +160,6 @@ class ProfileTab extends Component{
         );
     }
 }
-export default ProfileTab;
 
 const style = StyleSheet.create({
     container: {
@@ -160,4 +167,14 @@ const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     }
-})
+});
+
+// export default ProfileTab;
+export default connect(
+    (state) => ({
+      ...state
+    }), 
+    (dispatch) => ({
+        actions: bindActionCreators(actions, dispatch)
+    })
+  )(ProfileTab);
