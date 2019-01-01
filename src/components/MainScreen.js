@@ -9,6 +9,10 @@ import {
 import { Icon } from 'native-base';
 import { createTabNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../store/modules/steem';
+
 // import HomeTab from './AppTabNavigator/HomeTab';
 // import SearchTab from './AppTabNavigator/SearchTab';
 // import AddMediaTab from './AppTabNavigator/AddMediaTab';
@@ -22,20 +26,6 @@ import {
   LikesTab,
   ProfileTab
 } from './AppTabNavigator';
-
-class MainScreen extends Component{
-
-    static navigationOptions = {
-        header: null
-    }
-
-    render() {
-        return (
-            <AppTabContainer />
-        );
-    }
-}
-export default MainScreen;
 
 const AppTabNavigator = createBottomTabNavigator({
     HomeTab:{
@@ -73,10 +63,31 @@ const AppTabNavigator = createBottomTabNavigator({
 });
 const AppTabContainer = createAppContainer(AppTabNavigator);
 
+class MainScreen extends Component{
+
+    static navigationOptions = {
+        header: null
+    }
+
+    render() {
+        return (
+            <AppTabContainer />
+        );
+    }
+}
+
 const style = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     }
-})
+});
+
+// export default MainScreen;
+export default connect(
+    (state) => ({
+      ...state
+    }), 
+    (dispatch) => bindActionCreators(actions, dispatch)
+  )(MainScreen);

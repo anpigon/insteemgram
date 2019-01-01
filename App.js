@@ -6,13 +6,13 @@ import MainScreen from './src/components/MainScreen';
 // Redux 적용하기
 // import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './src/store';
 
 export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <AppNavigationContainer />
+        <AppContainer />
       </Provider>
     );
   }
@@ -24,7 +24,7 @@ const AppStackNavigator = createStackNavigator({
   }
 });
 
-const AppNavigationContainer = createAppContainer(AppStackNavigator);
+const AppContainer = createAppContainer(AppStackNavigator);
 
 const styles = StyleSheet.create({
   container: {

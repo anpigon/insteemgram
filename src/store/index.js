@@ -1,7 +1,6 @@
-// import { createStore } from 'redux';
-import { combineReducers } from 'redux';
-import steem from './modules/steem';
+import { createStore } from 'redux';
+import modules from './modules';
 
-export default combineReducers({
-  steem,
-});
+// 스토어 만들어서 내보내기
+const store = createStore(modules);
+export default store;
