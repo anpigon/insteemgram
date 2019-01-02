@@ -68,6 +68,7 @@ class MainScreen extends Component{
   // }
 
   async init() {
+    const { getAccountAsync } = this.props.actions;
     // global properties 조회
 
     // 피드 조회
@@ -76,7 +77,7 @@ class MainScreen extends Component{
     const userId = (await AsyncStorage.getItem('user_id')) || 'anpigon';
     if( userId ) {
       // 사용자 정보 조회
-      this.props.actions.getAccountAsync(userId);
+      await getAccountAsync(userId);
 
       // 블로그 조회
     } else {

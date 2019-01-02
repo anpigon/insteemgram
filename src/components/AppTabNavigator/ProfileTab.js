@@ -82,7 +82,7 @@ class ProfileTab extends Component{
   render(){
     // console.log('ProfileTab', this.props) 
     // const { steem: { account } } = this.props;
-    const account = this.props.steem.account;
+    const account = this.props.account;
     // console.log('account:', account);
     const name = account.name;
     const { profile } = account.json_metadata;
@@ -178,7 +178,8 @@ const style = StyleSheet.create({
 // export default ProfileTab;
 export default connect(
   (state) => ({
-    ...state
+    // ...state,
+    account: state.steem.account,
   }), 
   (dispatch) => ({
       actions: bindActionCreators(actions, dispatch)
