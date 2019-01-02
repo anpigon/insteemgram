@@ -8,7 +8,7 @@ import {
     } from 'react-native';
 
 import { Icon } from 'native-base';
-import { createTabNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { createTabNavigator, createBottomTabNavigator, createNavigationContainer, createAppContainer } from 'react-navigation';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -23,18 +23,10 @@ import {
 } from './AppTabNavigator';
 
 const AppTabNavigator = createBottomTabNavigator({
-  HomeTab:{
-    screen: HomeTab
-  },
-  Search:{
-    screen: SearchTab
-  },
-  AddMedia:{
-    screen: AddMediaTab
-  },
-  Likes:{
-    screen: LikesTab
-  },
+  HomeTab:{ screen: HomeTab },
+  Search:{ screen: SearchTab },
+  AddMedia:{ screen: AddMediaTab },
+  Likes:{ screen: LikesTab },
   Profile:{
     screen: ProfileTab,
     // screen: (props) => <ProfileTab { ...props } />,
@@ -58,7 +50,7 @@ const AppTabNavigator = createBottomTabNavigator({
     showIcon: true,
   }
 });
-const AppTabContainer = createAppContainer(AppTabNavigator);
+const AppTabContainer = createNavigationContainer(AppTabNavigator);
 
 class MainScreen extends Component{
 
@@ -75,16 +67,26 @@ class MainScreen extends Component{
   //   return '';
   // }
 
+  async init() {
+    // global properties 조회
+
+    // 피드 조회
+
+    // user_id 로 사용자 정보 조회
+    const userId = (await AsyncStorage.getItem('user_id')) || 'anpigon';
+    if( userId ) {
+      // 사용자 정보 조회
+      this.props.actions.getAccountAsync(userId);
+
+      // 블로그 조회
+    } else {
+      // 최신 글 조회 
+    }
+  }
+
   componentWillMount() {
     // console.log('componentWillMount');
-    // user_id 로 사용자 정보 조회
-    AsyncStorage.getItem('user_id')
-      .then(value => {
-        // console.log('id', r || 'anpigon')
-        const userId = value || 'anpigon';
-        this.props.actions.getAccount(userId);
-      })
-      .catch(err => console.log(err));
+    this.init();
   }
 
   render() {

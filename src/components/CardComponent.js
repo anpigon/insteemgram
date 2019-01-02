@@ -35,16 +35,16 @@ class CardCompnent extends Component{
                 <CardItem style={{height:45}}>
                     <Left>
                         <Button transparent>
-                            {/* <Icon name='ios-heart-outline' style={{color:'black'}}/> */}
-                            <AntDesign name="hearto" size={30}/>
+                            <Icon name='ios-heart' style={{color:'black'}}/>
+                            {/* <AntDesign name="hearto" size={30}/> */}
                         </Button>
                         <Button transparent>
-                            {/* <Icon name='ios-chatbubbles-outline' style={{color:'black'}}/> */}
-                            <AntDesign name="message1" size={30}/>
+                            <Icon name='ios-chatbubbles' style={{color:'black'}}/>
+                            {/* <AntDesign name="message1" size={30}/> */}
                         </Button>
                         <Button transparent>
-                            {/* <Icon name='ios-send-outline' style={{color:'black'}}/> */}
-                            <AntDesign name="export" size={30}/>
+                            <Icon name='ios-send' style={{color:'black'}}/>
+                            {/* <AntDesign name="export" size={30}/> */}
                         </Button>
                     </Left>
                 </CardItem>
